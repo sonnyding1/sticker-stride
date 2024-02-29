@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, momentLocalizer } from "react-big-calendar";
+import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import moment from "moment";
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -15,6 +15,7 @@ export default function HomePage() {
       title: "Some title",
     },
   ];
+  const views = Object.keys(Views).map((k) => Views[k as keyof typeof Views]);
 
   return (
     <div className="h-screen">
@@ -23,6 +24,7 @@ export default function HomePage() {
         events={events}
         startAccessor="start"
         endAccessor="end"
+        views={["month"]}
       />
     </div>
   );
