@@ -15,10 +15,9 @@ export default function HomePage() {
       title: "Some title",
     },
   ];
-  const views = Object.keys(Views).map((k) => Views[k as keyof typeof Views]);
 
   return (
-    <div className="h-screen">
+    <div className="h-96">
       <Calendar
         localizer={localizer}
         events={events}
